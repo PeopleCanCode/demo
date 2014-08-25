@@ -1,0 +1,26 @@
+<div class="row profile">
+  <div class="col-sm-4 col-md-3">
+    <%= image_tag(@user.avatar.url(:medium), class: 'avatar') %>
+    <h1><%= @user.full_name %></h1>
+    <ul>
+      <%= content_tag(:li, ("Name: " + @user.name)) unless @user.name.blank? %>
+      <%= content_tag(:li, ("Age: " + distance_of_time_in_words(Time.now, @user.date_of_birth) + " old")) unless @user.date_of_birth.blank? %>
+    </ul>
+
+    <!-- <h1><%= @user.email %></h1>
+    <ul>
+      <#% unless @user.name.blank? %>
+        <li>Name: <%= @user.name %></li>
+      <#% end %>
+
+      <#% unless @user.date_of_birth.blank? %>
+        <li>Date of birth:<%= @user.date_of_birth %></li>
+      <#% end %>
+    </ul> -->
+  </div>
+
+  <div class="feed">
+    <h3>Social Feed Coming</h3>
+    <p>Put a couple of lines of text here and see how it scrolls</p>
+  </div>
+</div>

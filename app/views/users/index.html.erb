@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="users row">
+    <% @users.each do |user| %>
+      <div class="panel panel-default">
+        <%= link_to user_path(user) do %>
+          <div class="panel-body">
+            <%= image_tag(user.avatar.url(:medium)) %>
+            <p><%= user.full_name %></p>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,9 +1,18 @@
+$navbar-default-border: #e5e5e5;
+$navbar-margin-bottom: 50px;
+
 @import "bootstrap";
 
 .field_with_errors { @extend .has-error; }
 .alert-notice { @extend .alert-info; }
 .alert-alert { @extend .alert-danger; }
 
+.alert {
+  top: 50px;
+  left:0;
+  right: 0;
+  position:absolute;
+}
 
 .round-image-50 {
   background-color: white;
@@ -16,6 +25,81 @@
   overflow: hidden;
   text-align: center;
   img {
-    width: 100%
+    width: 100%;
+  }
+}
+
+// Columns
+
+.users.row {
+  -moz-column-width: 15em;
+  -webkit-column-width: 15em;
+  -moz-column-gap: 0;
+  -webkit-column-gap: 0;
+}
+
+@media (min-width: 992px) {
+  .users.row {
+    -moz-column-width: 13.5em;
+    -webkit-column-width: 13.5em;
+  }
+}
+
+// users index
+
+.feed {
+  width: 100%;
+  text-align: center;
+}
+
+.panel {
+  display: inline-block;
+  padding: 0;
+  margin: 0 0 10px 0;
+  width:98%;
+  img {
+    width: 100%;
+  }
+}
+
+// users show
+
+.profile {
+  text-align: center;
+  .avatar {
+    max-width: 100%;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+}
+
+.users .panel-body {
+  padding: 0;
+  p {
+    margin: 10px;
+    overflow-x: scroll;
+  }
+  &:hover {
+    background-color: #fcfcfc;
+    box-shadow: 0 0 3px #b7b7b7;
+  }
+}
+
+@media (min-width: 768px) {
+  .feed {
+    text-align: center;
+    position: absolute;
+    right: 0;
+    top: 53px;
+    bottom: 0;
+    border-left: 1px dotted #e4e4e4;
+    width: 63%;
+    overflow-y: scroll;
+    padding-top: 50px;
+  }
+  .profile {
+    text-align: left;
   }
 }

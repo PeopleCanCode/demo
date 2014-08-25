@@ -19,4 +19,15 @@ class User < ActiveRecord::Base
   #     aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"]
   #   },
   #   fog_directory: ENV["FOG_DIRECTORY"]
+
+
+  def full_name
+    name.blank? ? email : name
+    # same as code above:
+    # if self.name.blank?
+    #   self.email
+    # else
+    #   self.name
+    # end
+  end
 end
