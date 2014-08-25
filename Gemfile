@@ -6,6 +6,10 @@ gem 'rails', '4.1.5'
 
 gem 'devise'
 
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 4.0.3'
+gem 'bootstrap-sass', '~> 3.1.1'
+
 group :development, :test do
   gem 'sqlite3'
 end
@@ -14,8 +18,6 @@ group :production do
   gem 'pg'
 end
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
