@@ -5,6 +5,9 @@ gem 'rails', '4.1.5'
 
 gem 'devise'
 gem 'paperclip', '~> 4.1'
+gem 'aws-sdk', '~> 1.36.1'
+gem 'fog'
+gem 'figaro'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
