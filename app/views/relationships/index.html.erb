@@ -1,29 +1,36 @@
 <h1>Connected users</h1>
 
-<% if @sent_invites.any? %>
-  <h3>Invited user</h3>
+<div class="container">
 
-  <%#= paginate(@sent_invites) %>
+  <% if @sent_invites.any? %>
+    <div class="row">
+      <h3>Invited user</h3>
 
-  <ul>
-    <% @sent_invites.each do |invitation| %>
-      <li><%= link_to invitation.invited_user.full_name, user_path(invitation.invited_user) %></li>
-    <% end %>
-  </ul>
+      <%= paginate(@sent_invites) %>
 
-  <%#= paginate(@sent_invites) %>
-<% end %>
+      <ul>
+        <% @sent_invites.each do |invitation| %>
+          <li><%= link_to invitation.invited_user.full_name, user_path(invitation.invited_user) %></li>
+        <% end %>
+      </ul>
 
-<% if @received_invites.any? %>
-  <h3>Invitations received</h3>
+      <%= paginate(@sent_invites) %>
+    </div>
+  <% end %>
 
-  <%#= paginate(@received_invites) %>
+  <% if @received_invites.any? %>
+    <div class="row">
+      <h3>Invitations received</h3>
 
-  <ul>
-    <% @received_invites.each do |invitation| %>
-      <li><%= link_to invitation.invited_user.full_name, user_path(invitation.invited_user) %></li>
-    <% end %>
-  </ul>
+      <%= paginate(@received_invites) %>
 
-  <%#= paginate(@received_invites) %>
-<% end %>
+      <ul>
+        <% @received_invites.each do |invitation| %>
+          <li><%= link_to invitation.invited_user.full_name, user_path(invitation.invited_user) %></li>
+        <% end %>
+      </ul>
+
+      <%= paginate(@received_invites) %>
+    </div>
+  <% end %>
+</div>
