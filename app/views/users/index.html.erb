@@ -1,6 +1,9 @@
 <div class="container">
-  <div class="users row">
+  <div class="row">
     <%= paginate(@users) %>
+  </div>
+  
+  <div class="users row">
     <% @users.each do |user| %>
       <div class="panel panel-default">
         <%= link_to user_path(user) do %>
@@ -11,6 +14,9 @@
         <% end %>
       </div>
     <% end %>
+  </div>
+
+  <div class="row">
     <%= paginate(@users) %>
   </div>
 </div>
