@@ -1,12 +1,20 @@
 <h1>This is a list of posts</h1>
 <%= link_to 'New Post', new_post_path %>
 
-<ul>
-  <% @posts.each do |p| %>
-    <li>
-      <h3><%= link_to p.title, post_path(p.id) %></h3>
-      <p><small><strong>By: </strong><%= p.user.email %></small></p>
-      <p><%= p.body %></p>
-    </li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="row">
+    <%= paginate(@posts) %>
+
+    <ul>
+      <% @posts.each do |p| %>
+        <li>
+          <h3><%= link_to p.title, post_path(p.id) %></h3>
+          <p><small><strong>By:</strong> <%= p.user.email %></small></p>
+          <p><%= p.body %></p>
+        </li>
+      <% end %>
+    </ul>
+    
+    <%= paginate(@posts) %>
+  </div>
+</div>

@@ -24,7 +24,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    # @posts = Post.all - we will replace this old code, you can delete this line
+    @posts = Post.order('created_at DESC').page(params[:page]).per(15)
   end
 
   def edit
