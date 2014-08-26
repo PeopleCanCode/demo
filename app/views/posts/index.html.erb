@@ -1,0 +1,10 @@
+<h1>This will be a list of posts</h1>
+
+<ul>
+  <% @posts.each do |p| %>
+    <li>
+      <h3><%= link_to p.title, post_path(p.id) %></h3>
+      <p><%= p.body %></p>
+    </li>
+  <% end %>
+</ul>
