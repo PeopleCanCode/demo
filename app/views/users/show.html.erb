@@ -7,15 +7,15 @@
       <%= content_tag(:li, ("Age: " + distance_of_time_in_words(Time.now, @user.date_of_birth) + " old")) unless @user.date_of_birth.blank? %>
     </ul>
 
-    <!-- <h1><%= @user.email %></h1>
+    <!-- <h1><%#= @user.email %></h1>
     <ul>
-      <#% unless @user.name.blank? %>
-        <li>Name: <%= @user.name %></li>
-      <#% end %>
+      <%# unless @user.name.blank? %>
+        <li>Name: <%#= @user.name %></li>
+      <%# end %>
 
-      <#% unless @user.date_of_birth.blank? %>
-        <li>Date of birth:<%= @user.date_of_birth %></li>
-      <#% end %>
+      <%# unless @user.date_of_birth.blank? %>
+        <li>Date of birth:<%#= @user.date_of_birth %></li>
+      <%# end %>
     </ul> -->
   </div>
 
