@@ -2,6 +2,7 @@
   <div class="col-sm-4 col-md-3">
     <%= image_tag(@user.avatar.url(:medium), class: 'avatar') %>
     <h1><%= @user.full_name %></h1>
+
     <ul>
       <%= content_tag(:li, ("Name: " + @user.name)) unless @user.name.blank? %>
       <%= content_tag(:li, ("Age: " + distance_of_time_in_words(Time.now, @user.date_of_birth) + " old")) unless @user.date_of_birth.blank? %>
@@ -17,6 +18,19 @@
         <li>Date of birth:<%#= @user.date_of_birth %></li>
       <%# end %>
     </ul> -->
+
+    <% if current_user %>
+      <% @relationship = current_user.sent_invites.where(invited_id: @user.id).first %>
+
+      <% if @relationship %>
+        <%= link_to "Stop following", @relationship, method: :delete %>
+      <% else %>
+        <%= form_for :relationship, url: relationships_path, html: { method: :post } do |f| %>
+          <%= f.hidden_field :invited_id, value: @user.id %>
+          <%= f.submit 'Follow', class: 'btn btn-primary' %>
+        <% end %>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="feed">
